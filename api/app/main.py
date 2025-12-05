@@ -12,6 +12,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from sklearn.feature_extraction.text import TfidfVectorizer
 import numpy as np
 
+from dotenv import load_dotenv
+load_dotenv()
+
+
+
 # Intentamos transformers; si falla, seguiremos sin generación (solo RAG).
 try:
     from transformers import pipeline, set_seed
