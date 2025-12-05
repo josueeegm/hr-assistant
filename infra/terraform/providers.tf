@@ -1,4 +1,6 @@
 terraform {
+  required_version = ">= 1.3.0"
+
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
@@ -6,7 +8,13 @@ terraform {
     }
   }
 
-  required_version = ">= 1.3.0"
+  #Backend remoto en Azure Storage Account
+  backend "azurerm" {
+    resource_group_name  = "gio-rg"
+    storage_account_name = "gioterraformstate2032"
+    container_name       = "tfstate"
+    key                  = "terraform.tfstate"
+  }
 }
 
 provider "azurerm" {

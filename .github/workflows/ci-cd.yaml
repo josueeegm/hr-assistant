@@ -62,6 +62,10 @@ jobs:
             --from-literal=key="$KEY" \
             --dry-run=client -o yaml | kubectl apply -f -
 
+      - name: Ensure AKS has ACR Pull access
+        run: |
+          az aks update -n $AKS_NAME -g $RESOURCE_GROUP --attach-acr $ACR_NAME
+
       - name: Deploy manifests
         run: |
           kubectl apply -f infra/k8s/namespace.yaml

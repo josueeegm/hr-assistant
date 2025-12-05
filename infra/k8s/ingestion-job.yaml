@@ -6,6 +6,8 @@ metadata:
 spec:
   template:
     spec:
+      imagePullSecrets:
+       - name: acr-secret
       nodeSelector:
         agentpool: nodepool1
       restartPolicy: Never

@@ -130,15 +130,3 @@ resource "azurerm_cognitive_account" "doc_intel" {
 #  key_vault_id = azurerm_key_vault.kv.id
 #}
 
-
-
-
-# -------------------------
-# Give AKS permission to pull from ACR
-# -------------------------
-resource "azurerm_role_assignment" "aks_acr_pull" {
-  principal_id         = azurerm_kubernetes_cluster.aks.identity[0].principal_id
-  role_definition_name = "AcrPull"
-  scope                = azurerm_container_registry.acr.id
-}
-
