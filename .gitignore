@@ -1,2 +1,5 @@
 terraform.auto.tfvars
 *.tfvars
+.terraform/
+*.tfstate
+*.tfstate.backup
