@@ -18,10 +18,11 @@ A fullstack AI-powered chat assistant that allows users to upload CVs in PDF for
 - **Frontend:** React.js
 - **Backend:** FastAPI (Python)
 - **Document Processing:** Azure Document Intelligence
-- **Optional Generation:** HuggingFace Transformers (distilgpt2)
+- **Retrieval:** TF-IDF vectorization via Scikit-learn
+- **Optional Generation:** HuggingFace Transformers (distilgpt2, optional)
 - **Containerization:** Docker
-- **Deployment:** Azure Kubernetes Service (AKS) + NGINX Ingress
-- **Secrets Management:** Azure Key Vault & Github Secrets
+- **Deployment:** Azure Kubernetes Service (AKS), NGINX Ingress
+- **Secrets Management:** Azure Key Vault
 
 
 ### Prerequisites for the Setup
